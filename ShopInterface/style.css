@@ -1,0 +1,45 @@
+.deck {
+    display: flex;
+    gap: 20px;
+    background-color: #FF80DD;
+}
+
+.productcard {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.font {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#productname {
+    font-size: 16px;
+    font-weight: 700;
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 15px;
+    max-height: 15px;
+    overflow: hidden;
+}
+
+#productinfo {
+    font-size: 12px;
+    font-weight: 300;
+    max-width: 300px;
+    min-height: 40px;
+    max-height: 40px;
+    overflow: scroll;
+}
+
+#buttondesign {
+    display:inline-block;
+    width: 100px;
+    height: 50px;
+    margin:5px;
+    padding:8px;
+    background:#FFA0F0;
+    border-radius:4px;
+    border-color: #FF107F;
+}

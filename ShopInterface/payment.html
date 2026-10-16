@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Store</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+
+<body>
+  <h3 class="font">Your total bill is</h3>
+  <h3 class="font" id="totalprice"></h3>
+  <script src="script.js">
+    let totalprice = count1 * price1 + count2 * price2 + count3 * price3 + count4 * price4 + count5 * price5 + count6 * price6 + count7 * price7 + count8 * price8 + count9 * price9;
+    console.log(totalprice);
+    document.getElementById("totalprice").innerHTML = totalprice;
+  </script>
+</body>

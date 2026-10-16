@@ -1,13 +1,23 @@
+/* It is advised that a deck contains no more than 5 productcards */
 .deck {
     display: flex;
     gap: 20px;
+}
+
+#deck1 {
     background-color: #FF80DD;
 }
 
-.productcard {
-    display:flex;
+#deck2 {
+    background-color: #EEA000;
+}
+
+.productcard { 
+    display: flex;
+    flex: 1;
+    max-width: 300px;
+    min-width: 300px;
     flex-direction: column;
-    justify-content: space-evenly;
 }
 
 .font {
@@ -17,27 +27,27 @@
 #productname {
     font-size: 16px;
     font-weight: 700;
-    min-width: 300px;
     max-width: 300px;
-    min-height: 15px;
-    max-height: 15px;
-    overflow: hidden;
+    min-width: 300px;
 }
 
 #productinfo {
     font-size: 12px;
     font-weight: 300;
     max-width: 300px;
-    min-height: 40px;
-    max-height: 40px;
+    min-width: 300px;
+    max-height: 30px;
+    min-height: 30px;
+    flex: 30px;
     overflow: scroll;
 }
 
-#buttondesign {
+.buttondesign {
     display:inline-block;
     width: 100px;
     height: 50px;
     margin:5px;
+    margin-top: auto;
     padding:8px;
     background:#FFA0F0;
     border-radius:4px;

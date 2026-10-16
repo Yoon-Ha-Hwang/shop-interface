@@ -9,28 +9,98 @@
 
 <body>
   <script src="script.js"></script>
+
   <h1 class="font">Welcome to our store!</h1>
   <h2 class="font">Browse our product catalogue below.</h2>
-  <div class="deck"> <!-- Multiple cards are in a "deck" -->
+  <h3 class="font">Bestsellers</h2>
+  <div class="deck" id="deck1"> <!-- Multiple cards are in a "deck" -->
     <div class="productcard">
       <img src = "Product 1.png" alt = "Product 1" width="300px" height="200px">
       <p class="font" id="productname">Product 1</p>
       <p class="font" id="productinfo">This is a great product. You cannot possibly be living without it.</p>
-      <button id=buttondesign onclick="buy1()">Add product to cart</button>
+      <p class="font" id="price1"></p>
+      <button class="buttondesign" onclick="buy1()">Add product to cart</button>
     </div>
 
     <div class="productcard">
       <img src = "Product 2.png" alt = "Product 2" width="300px" height="200px">
       <p class="font" id="productname">Product 2</p>
       <p class="font" id="productinfo">This is a great product. You cannot possibly be living without it. In fact, it's surprising that you are even able to read this alive. Like, how...? Everyone has it.</p>
-      <button id=buttondesign onclick="buy2()">Add product to cart</button>
+      <p class="font" id="price2"></p>
+      <button class="buttondesign" onclick="buy2()">Add product to cart</button>
     </div>
 
     <div class="productcard">
       <img src = "Product 3.png" alt = "Product 3" width="300px" height="200px">
       <p class="font" id="productname">Product 3</p>
       <p class="font" id="productinfo">This is a great product.</p>
-      <button id=buttondesign onclick="buy3()">Add product to cart</button>
+      <p class="font" id="price3"></p>
+      <button class="buttondesign" onclick="buy3()">Add product to cart</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Product 4.png" alt = "Product 4" width="300px" height="200px">
+      <p class="font" id="productname">Product 4</p>
+      <p class="font" id="productinfo">This is an awesome product.</p>
+      <p class="font" id="price4"></p>
+      <button class="buttondesign" onclick="buy4()">Add product to cart</button>
     </div>
   </div>
+
+  <h3 class="font">Steadysellers</h2>
+  <div class="deck" id="deck2">
+    <div class="productcard">
+      <img src = "Product 5.png" alt = "Product 5" width="300px" height="200px">
+      <p class="font" id="productname">Product 5</p>
+      <p class="font" id="productinfo">This is a great product. You cannot possibly be living without it.</p>
+      <p class="font" id="price5"></p>
+      <button class="buttondesign" onclick="buy5()">Add product to cart</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Product 6.png" alt = "Product 6" width="300px" height="200px">
+      <p class="font" id="productname">Product 6</p>
+      <p class="font" id="productinfo">This is a great product. You cannot possibly be living without it. In fact, it's surprising that you are even able to read this alive. Like, how...? Everyone has it.</p>
+      <p class="font" id="price6"></p>
+      <button class="buttondesign" onclick="buy6()">Add product to cart</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Product 7.png" alt = "Product 7" width="300px" height="200px">
+      <p class="font" id="productname">Product 7</p>
+      <p class="font" id="productinfo">This is a great product.</p>
+      <p class="font" id="price7"></p>
+      <button class="buttondesign" onclick="buy7()">Add product to cart</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Product 8.png" alt = "Product 8" width="300px" height="200px">
+      <p class="font" id="productname">Product 8</p>
+      <p class="font" id="productinfo">This is an awesome product.</p>
+      <p class="font" id="price8"></p>
+      <button class="buttondesign" onclick="buy8()">Add product to cart</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Product 9.png" alt = "Product 9" width="300px" height="200px">
+      <p class="font" id="productname">Product 9</p>
+      <p class="font" id="productinfo">This is an awesome product.</p>
+      <p class="font" id="price9"></p>
+      <button class="buttondesign" onclick="buy9()">Add product to cart</button>
+    </div>
+  </div>
+
+  <button class="buttondesign" onclick="checkout()">Continue to Checkout</button>
+
+  <script>
+    document.getElementById("price1").innerHTML = price1;
+    document.getElementById("price2").innerHTML = price2;
+    document.getElementById("price3").innerHTML = price3;
+    document.getElementById("price4").innerHTML = price4;
+    document.getElementById("price5").innerHTML = price5;
+    document.getElementById("price6").innerHTML = price6;
+    document.getElementById("price7").innerHTML = price7;
+    document.getElementById("price8").innerHTML = price8;
+    document.getElementById("price9").innerHTML = price9;
+  </script>
 </body>

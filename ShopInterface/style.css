@@ -4,12 +4,13 @@
     gap: 20px;
 }
 
+/* Avoid using colours similar to gold or magenta because that overlaps with the custom currency icon */
 #deck1 {
-    background-color: #FF80DD;
+    background-color: #00CC33;
 }
 
 #deck2 {
-    background-color: #EEA000;
+    background-color: #00AAFF;
 }
 
 .productcard { 
@@ -24,14 +25,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#productname {
+.productname {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
     font-weight: 700;
     max-width: 300px;
     min-width: 300px;
 }
 
-#productinfo {
+.productinfo {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 12px;
     font-weight: 300;
     max-width: 300px;
@@ -42,14 +45,19 @@
     overflow: scroll;
 }
 
+.productprice {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 30px;
+    font-weight: 500;
+    max-width: 300px;
+    min-width: 300px;
+}
+
 .buttondesign {
     display:inline-block;
     width: 100px;
     height: 50px;
-    margin:5px;
-    margin-top: auto;
-    padding:8px;
-    background:#FFA0F0;
-    border-radius:4px;
-    border-color: #FF107F;
+    background:#FF107F;
+    border-radius:6px;
+    border-color: #FFA0F0;
 }

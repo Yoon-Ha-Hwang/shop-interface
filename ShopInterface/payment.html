@@ -8,8 +8,14 @@
 </head>
 
 <body>
-  <p class="font" id="receipt"></p>
+  <h2 class="font">Review Order</h3>
+  <p class="receiptdesign" id="receipt"></p>
   <p class="font" id="totalBill"></p>
   <script src="script.js"></script>
   <script>renderReceipt();</script>
+  <div class="paymentbuttons">
+    <button class="buttondesign" onclick="reset()">Reset Orders</button>
+    <button class="buttondesign" onclick="goBack()">Return to Shop</button>
+    <button class="buttondesign" onclick="confirm()">Pay Now</button>
+  </div>
 </body>

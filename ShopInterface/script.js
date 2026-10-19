@@ -100,7 +100,6 @@ function removeProduct(index) {
 
 function renderReceipt() {
     let receipt = "";
-    let totalBill = 0;
     for(let i = 0; i < inventory.length; i++) {
         if(inventory[i].getCount() != 0) {
             if(receipt != "") {
@@ -108,12 +107,19 @@ function renderReceipt() {
             }
             receipt += inventory[i].getCount() + "x " + inventory[i].getName() + ", (" 
             receipt += '<img src = "Custom Currency Icon.png" alt = "$" width="12px" height="19.2px"></img>' + inventory[i].getPrice() + " each)";
+        }
+    }
+    document.getElementById("receipt").innerHTML = receipt;
+}
+
+function totalBill() {
+    let totalBill = 0;
+    for(let i = 0; i < inventory.length; i++) {
+        if(inventory[i].getCount() != 0) {
             let totalForThisItem =  inventory[i].getCount() * inventory[i].getPrice();
             totalBill += totalForThisItem;
         }
     }
-    totalBill = "Your total bill is " + '<img src = "Custom Currency Icon.png" alt = "$" width="12px" height="19.2px"></img>' + totalBill;
-    document.getElementById("receipt").innerHTML = receipt;
     document.getElementById("totalBill").innerHTML = totalBill;
 }
 

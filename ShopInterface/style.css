@@ -61,3 +61,22 @@
     border-radius:6px;
     border-color: #FFA0F0;
 }
+
+.receiptdesign {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #10A0EE;
+    border-radius: 6px;
+    border-color: #0090DD;
+    font-size: 20px;
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 200px;
+    min-height: 200px;
+    overflow: scroll;
+}
+
+.paymentbuttons {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}

@@ -1,3 +1,9 @@
+/*
+NOTE TO SELF
+. means class
+# means ID
+*/
+
 /* It is advised that a deck contains no more than 5 productcards */
 .deck {
     display: flex;
@@ -75,8 +81,28 @@
     overflow: scroll;
 }
 
-.paymentbuttons {
+.paymentbuttons { 
     display: flex;
     flex: 1;
     flex-direction: row;
+}
+/* 
+Honestly, looking back, this is more so a "display horizontally" thing...
+Too bad I can't rename it, otherwise I have to go back and change every instance of the function...
+Sorry for bad naming conventions, I hope you understand.
+*/
+
+#totalBillwithIcon {
+    font-size: 36px;
+}
+
+.stripe {
+    background-color: #66FF00;
+    border-radius: 6px;
+    border-color: #44DD00;
+    max-width: 300px;
+    min-width: 300px;
+    max-height: 500px;
+    min-height: 500px;
+    overflow: scroll;
 }

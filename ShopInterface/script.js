@@ -123,6 +123,18 @@ function totalBill() {
     document.getElementById("totalBill").innerHTML = totalBill;
 }
 
+function totalBillwithIcon() {
+    let totalBillwithIcon = 0;
+    for(let i = 0; i < inventory.length; i++) {
+        if(inventory[i].getCount() != 0) {
+            let totalForThisItem =  inventory[i].getCount() * inventory[i].getPrice();
+            totalBillwithIcon += totalForThisItem;
+        }
+    }
+    totalBillwithIcon = '<img src = "Custom Currency Icon.png" alt = "$" width="12px" height="19.2px"></img>' + totalBillwithIcon.toString();
+    document.getElementById("totalBillwithIcon").innerHTML = totalBillwithIcon;
+}
+
 function reset() {
     for(let i = 0; i < inventory.length; i++) {
         inventory[i].count = 0;

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Payment in Progress...</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <h2 class="font">Payment</h3>
+  <small class="font">(You do not actually pay anything, this is a mock transaction page; so you can type whatever information you want even if it's fake)</small>
+  <div class="stripe">
+    <p class="font">Your total bill for today is </p>
+    <p class="font" id="totalBillwithIcon"></p>
+    <p class="font">In-store credits usage</p>
+
+    <input type="number" min="0" max="1000" value="0" step="100" 
+    onblur="this.value = Math.floor(this.value / 100) * 100"
+    oninput="if(this.value > this.max || this.value < this.min) { this.value = 0; alert('The value you entered is invalid')}">
+
+    <small class="font">credits</small>
+    <br>
+    <small class="font">(100 credits = <img src = "Custom Currency Icon.png" alt = "$" width="6px" height="9.6px">1)</small>
+    
+  </div>
+  <button class="buttondesign" onclick="goBack()">Return to Shop</button>
+
+  <script src="script.js"></script>
+  <script>
+    totalBillwithIcon();
+  </script>
+</body>

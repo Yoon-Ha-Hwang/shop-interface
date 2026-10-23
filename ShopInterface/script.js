@@ -81,6 +81,8 @@ function saveCart() {
 restoreCart();
 //End of AI-enhanced code segment
 
+
+
 function renderProducts() {
     for(let i = 0; i < inventory.length; i++) { //Label naming format is name#, info#, price# (e.g. name1, info2, price3)
         document.getElementById("name" + i).innerHTML = inventory[i].getName();
@@ -116,8 +118,7 @@ function totalBill() {
     let totalBill = 0;
     for(let i = 0; i < inventory.length; i++) {
         if(inventory[i].getCount() != 0) {
-            let totalForThisItem =  inventory[i].getCount() * inventory[i].getPrice();
-            totalBill += totalForThisItem;
+            totalBill += inventory[i].getCount() * inventory[i].getPrice();
         }
     }
     document.getElementById("totalBill").innerHTML = totalBill;
@@ -127,8 +128,7 @@ function totalBillwithIcon() {
     let totalBillwithIcon = 0;
     for(let i = 0; i < inventory.length; i++) {
         if(inventory[i].getCount() != 0) {
-            let totalForThisItem =  inventory[i].getCount() * inventory[i].getPrice();
-            totalBillwithIcon += totalForThisItem;
+            totalBill += inventory[i].getCount() * inventory[i].getPrice();
         }
     }
     totalBillwithIcon = '<img src = "Custom Currency Icon.png" alt = "$" width="12px" height="19.2px"></img>' + totalBillwithIcon.toString();

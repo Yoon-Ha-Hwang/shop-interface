@@ -100,9 +100,6 @@ Sorry for bad naming conventions, I hope you understand.
     background-color: #66FF00;
     border-radius: 6px;
     border-color: #44DD00;
-    max-width: 300px;
-    min-width: 300px;
-    max-height: 500px;
-    min-height: 500px;
-    overflow: scroll;
+    max-width: 350px;
+    min-width: 350px;
 }

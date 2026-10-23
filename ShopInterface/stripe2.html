@@ -6,3 +6,66 @@
   <title>Payment in Progress...</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<body>
+  <h2 class="font">Payment</h2>
+  <small class="font">(You do not actually pay anything, this is a mock transaction page; so you can type whatever information you want even if it's fake)</small>
+  <div class="stripe">
+    <p class="font">Your remaining bill is </p>
+    <p class="font" id="remainingPrice"></p>
+    <p class="font">Choose a currency to pay in: </p>
+    <select class="font" id="dropdown">
+      <option value=0>A</option>
+      <option value=1>B</option>
+      <option value=2>C</option>
+      <option value=3>D</option>
+      <option value=4>E</option>
+      <option value=5>F</option>
+    </select>
+    <br><br>
+    <div class="font" id="FXInfo"></div>
+    <div class="font" id="toPay"></div>
+  </div>
+
+  <button class="buttondesign" onclick="goBack()">Cancel Payment</button>
+
+
+  <script src="script.js"></script>
+
+  <script>
+    //Start of AI-enhanced code block
+    const remainingPrice = Number(sessionStorage.getItem("remainingPrice")); //Retrieve saved value from stripe.html
+    const remainingPriceElement = document.getElementById("remainingPrice");
+    const dropdown = document.getElementById("dropdown");
+    remainingPriceElement.innerHTML = '<img src="Custom Currency Icon.png" alt="$" width="12" height="19.2">' + remainingPrice;
+    //End of AI-enhanced code block
+
+    function updateMessage() {
+      const currencyList = ["A", "B", "C", "D", "E", "F"];
+      const exchangeRate = [5.00, 2.00, 0.50, 0.30, 9.00, 12000];
+      const selectedIndex = Number(dropdown.value);
+      const selectedCurrency = currencyList[selectedIndex];
+
+      let appliedRate = exchangeRate[selectedIndex];
+      let totalDue = appliedRate * remainingPrice;
+      let FXInfo = document.getElementById("FXInfo");
+      let toPay = document.getElementById("toPay");
+
+      if(String(exchangeRate[selectedIndex]).indexOf(".") == -1) {
+        FXInfo.innerHTML = "Exchange rate: " + '<img src="Custom Currency Icon.png" alt="$" width="12" height="19.2">' + "1 = " + selectedCurrency + " " + appliedRate;
+        toPay.innerHTML = "You will pay: " + selectedCurrency + " " + totalDue;
+      } else {
+        FXInfo.innerHTML = "Exchange rate: " + '<img src="Custom Currency Icon.png" alt="$" width="12" height="19.2">' + "1 = " + selectedCurrency + " " + appliedRate.toFixed(2);
+        toPay.innerHTML = "You will pay: " + selectedCurrency + " " + totalDue.toFixed(2);
+      }
+    }
+
+    //Start of AI-enhanced code block
+    dropdown.addEventListener("change", () => {
+      updateMessage();
+    });
+
+    updateMessage();
+    //End of AI-enhanced code block
+  </script>
+</body>

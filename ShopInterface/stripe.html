@@ -8,26 +8,62 @@
 </head>
 
 <body>
-  <h2 class="font">Payment</h3>
+  <h2 class="font">Payment</h2>
   <small class="font">(You do not actually pay anything, this is a mock transaction page; so you can type whatever information you want even if it's fake)</small>
   <div class="stripe">
     <p class="font">Your total bill for today is </p>
     <p class="font" id="totalBillwithIcon"></p>
     <p class="font">In-store credits usage</p>
 
-    <input type="number" min="0" max="1000" value="0" step="100" 
-    onblur="this.value = Math.floor(this.value / 100) * 100"
-    oninput="if(this.value > this.max || this.value < this.min) { this.value = 0; alert('The value you entered is invalid')}">
+    <input id="creditcount" type="number" min="0" max="1000000" value="0" step="100" 
+    onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);"
+    onchange="this.value = Math.floor(this.value / 100) * 100;">
+    <!--
+    The "onkeydown" part is AI-enhanced
+    -->
 
     <small class="font">credits</small>
+
     <br>
     <small class="font">(100 credits = <img src = "Custom Currency Icon.png" alt = "$" width="6px" height="9.6px">1)</small>
-    
+    <br><br>
+    <small class="font">Enter in multiples of 100 credits only.</small>
+    <br><br>
+    <small class="font">If your entered value does not divide evenly into 100, it will automatically be rounded down to the nearest 100 credits.</small>
+    <br><br>
+    <small class="font">Don't worry about entering too many credits. We will automatically reduce the amount entered such that it's just enough to pay in full.</small>
   </div>
   <button class="buttondesign" onclick="goBack()">Return to Shop</button>
 
   <script src="script.js"></script>
   <script>
     totalBillwithIcon();
+    //Start of AI enhanced block of code
+    const spinbox = document.getElementById("creditcount");
+
+    spinbox.addEventListener("change", (event) => {
+      let currentValue = Number(event.target.value);
+    //End of AI enhanced block of code
+
+      let remainingPrice = 0;
+      for(let i = 0; i < inventory.length; i++) {
+        if(inventory[i].getCount() != 0) {
+          remainingPrice += inventory[i].getCount() * inventory[i].getPrice();;
+        }
+      }
+    
+      let totalDiscount = currentValue / 100;
+      if(remainingPrice > totalDiscount) {
+        remainingPrice -= totalDiscount;
+        alert("You have elected to use " + currentValue + " credits. You will pay " + remainingPrice + " on the following page.");
+
+
+      } else { //The amount of credits entered is suffice to pay the bill
+        currentValue = remainingPrice * 100 //Prevent over-spending of credits
+        alert("You have paid the bill in full by using " + currentValue + " credits. Thank you for your purchase!");
+        window.location.href = "success.html";
+      }
+    }
+    );
   </script>
 </body>

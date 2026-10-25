@@ -15,20 +15,49 @@
     <p class="font" id="remainingPrice"></p>
     <p class="font">Choose a currency to pay in: </p>
     <select class="font" id="dropdown">
-      <option value=0>A</option>
-      <option value=1>B</option>
-      <option value=2>C</option>
-      <option value=3>D</option>
-      <option value=4>E</option>
-      <option value=5>F</option>
+      <option value=0>Singapore Dollar</option>
+      <option value=1 selected> U.S. Dollar</option>
+      <option value=2>Canadian Dollar</option>
+      <option value=3>Euro</option>
+      <option value=4>British Pound</option>
+      <option value=5>Australian Dollar</option>
+      <option value=6>Malaysian Ringgit</option>
+      <option value=7>Indonesian Rupiah</option>
+      <option value=8>Thai Baht</option>
+      <option value=9>Vietnamese Dong</option>
+      <option value=10>Indian Rupee</option>
+      <option value=11>Hong Kong Dollar</option>
+      <option value=12>Chinese Yuan</option>
+      <option value=13>South Korean Won</option>
+      <option value=14>Japanese Yen</option>
+      <option value=15>Russian Ruble</option>
+      <option value=16>Romanian Leu</option>
+      <option value=17>Polish Zloty</option>
     </select>
     <br><br>
     <div class="font" id="FXInfo"></div>
     <div class="font" id="toPay"></div>
+
+    <br>
+    <p class="font"><strong>Please enter your payment details</strong></p>
+    <br>
+    <input type="text" class="textfield" id="name" placeholder="Your Name">
+    <br>
+    <input type="number" class="textfield" id="cardnumber" placeholder="Card Number">
+    <br>
+    <input type="text" class="textfield" id="cardexpiry" placeholder="Expiry Date">
+    <br>
+    <input type="number" class="textfield" id="cardcvv" placeholder="CVV">
+    <br>
+    <textarea class="textfield" id="billingAddress" placeholder="Billing Address"></textarea>
+    <br>
+    <input type="text" class="textfield" id="email" placeholder="Email">
   </div>
 
-  <button class="buttondesign" onclick="goBack()">Cancel Payment</button>
-
+  <div class="paymentinfo">
+    <button class="buttondesign" onclick="goBack()">Cancel Payment</button>
+    <button class="buttondesign" onclick="check()">Confirm Payment Info</button>
+  </div>
 
   <script src="script.js"></script>
 
@@ -40,9 +69,12 @@
     remainingPriceElement.innerHTML = '<img src="Custom Currency Icon.png" alt="$" width="12" height="19.2">' + remainingPrice;
     //End of AI-enhanced code block
 
+
+    //IMPORTANT: MAKE SURE THE ARRAY MATCHES THE DROPDOWN OPTIONS 
     function updateMessage() {
-      const currencyList = ["A", "B", "C", "D", "E", "F"];
-      const exchangeRate = [5.00, 2.00, 0.50, 0.30, 9.00, 12000];
+      const currencyList = ["SGD", "USD", "CAD", "EUR", "GBP", "AUD", "MYR", "IDR", "THB", "VND", "INR", "HKD", "CNY", "KRW", "JPY", "RUB", "RON", "PLN"]; 
+      const exchangeRate = [1.00, 0.80, 1.05, 0.65, 0.55, 1.15, 3.10, 14500, 25, 19000, 80, 5.70, 5.30, 1200, 150, 130, 2.00, 2.50];
+      //Editor's Note: These aren't actual values; they are only loosely based on the actual values. After all, this isn't a real-life storefront.
       const selectedIndex = Number(dropdown.value);
       const selectedCurrency = currencyList[selectedIndex];
 
@@ -67,5 +99,30 @@
 
     updateMessage();
     //End of AI-enhanced code block
+
+    function check() {
+      let nameEntered = document.getElementById("name").value;
+      let cardEntered = document.getElementById("cardnumber").value;
+      let expiryEntered = document.getElementById("cardexpiry").value;
+      let cvvEntered = document.getElementById("cardcvv").value;
+      let addressEntered = document.getElementById("billingAddress").value;
+      let emailEntered = document.getElementById("email").value;
+      if(nameEntered.trim() === "") {
+        alert("Please enter your name.");
+      } else if(cardEntered.trim() === "") {
+        alert("Please enter your card number.");
+      } else if(expiryEntered.trim() === "") {
+        alert("Please enter your card's expiry date.");
+      } else if(cvvEntered.trim() === "") {
+        alert("Please enter your card's CVV value.");
+      } else if(addressEntered.trim() === "") {
+        alert("Please enter your billing address.");
+      } else if(emailEntered.trim() === "") {
+        alert("Please enter your email address.");
+      } else {
+        alert("Payment Success!");
+        window.location.href = "success.html";
+      }
+    }
   </script>
 </body>

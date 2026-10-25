@@ -15,7 +15,7 @@
     <p class="font" id="totalBillwithIcon"></p>
     <p class="font">In-store credits usage</p>
 
-    <input id="creditcount" type="number" min="0" max="1000000" value="0" step="100" 
+    <input id="creditcount" type="number" min="0" max="1000000" value="0" step="100"
     onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);"
     onchange="this.value = Math.floor(this.value / 100) * 100;">
     <!--
@@ -36,7 +36,9 @@
   <button class="buttondesign" onclick="goBack()">Return to Shop</button>
 
   <script src="script.js"></script>
+
   <script>
+    restoreCart();
     totalBillwithIcon();
     //Start of AI enhanced block of code
     const spinbox = document.getElementById("creditcount");
@@ -56,8 +58,8 @@
       if(remainingPrice > totalDiscount) {
         remainingPrice -= totalDiscount;
         alert("You have elected to use " + currentValue + " credits. You will pay " + remainingPrice + " on the following page.");
-
-
+        window.location.href = "stripe2.html";
+        sessionStorage.setItem("remainingPrice", String(remainingPrice)); //Export value to stripe2.html
       } else { //The amount of credits entered is suffice to pay the bill
         currentValue = remainingPrice * 100 //Prevent over-spending of credits
         alert("You have paid the bill in full by using " + currentValue + " credits. Thank you for your purchase!");

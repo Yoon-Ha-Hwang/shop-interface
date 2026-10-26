@@ -65,16 +65,17 @@
     //Start of AI-enhanced code block
     const remainingPrice = Number(sessionStorage.getItem("remainingPrice")); //Retrieve saved value from stripe.html
     const remainingPriceElement = document.getElementById("remainingPrice");
-    const dropdown = document.getElementById("dropdown");
-    remainingPriceElement.innerHTML = '<img src="Custom Currency Icon.png" alt="$" width="12" height="19.2">' + remainingPrice;
     //End of AI-enhanced code block
 
+    const dropdown = document.getElementById("dropdown");
 
-    //IMPORTANT: MAKE SURE THE ARRAY MATCHES THE DROPDOWN OPTIONS 
+    //IMPORTANT: MAKE SURE THE ARRAY MATCHES THE DROPDOWN OPTIONS (ORDER SENSITIVE) 
+    const currencyList = ["SGD", "USD", "CAD", "EUR", "GBP", "AUD", "MYR", "IDR", "THB", "VND", "INR", "HKD", "CNY", "KRW", "JPY", "RUB", "RON", "PLN"];
+    const exchangeRate = [1.00, 0.80, 1.05, 0.65, 0.55, 1.15, 3.10, 14500, 25, 19000, 75, 6, 5.30, 1200, 150, 120, 3.00, 2.50];
+    //Editor's Note: These aren't actual values; they are only loosely based on the actual values. After all, this isn't a real-life storefront.
+    remainingPriceElement.innerHTML = '<img src="Custom Currency Icon.png" alt="$" width="12" height="19.2">' + remainingPrice;
+
     function updateMessage() {
-      const currencyList = ["SGD", "USD", "CAD", "EUR", "GBP", "AUD", "MYR", "IDR", "THB", "VND", "INR", "HKD", "CNY", "KRW", "JPY", "RUB", "RON", "PLN"]; 
-      const exchangeRate = [1.00, 0.80, 1.05, 0.65, 0.55, 1.15, 3.10, 14500, 25, 19000, 80, 5.70, 5.30, 1200, 150, 130, 2.00, 2.50];
-      //Editor's Note: These aren't actual values; they are only loosely based on the actual values. After all, this isn't a real-life storefront.
       const selectedIndex = Number(dropdown.value);
       const selectedCurrency = currencyList[selectedIndex];
 
@@ -120,6 +121,15 @@
       } else if(emailEntered.trim() === "") {
         alert("Please enter your email address.");
       } else {
+        //Start of AI-enhanced code block
+        const receipt = JSON.parse(sessionStorage.getItem("paymentReceipt") || "{}");
+        receipt.buyerName = nameEntered.trim();
+        receipt.cardLast4 = cardEntered.trim().slice(-4);
+        receipt.selectedCurrency = currencyList[Number(dropdown.value)];
+        receipt.totalDue = exchangeRate[Number(dropdown.value)] * remainingPrice;
+        sessionStorage.setItem("paymentReceipt", JSON.stringify(receipt));
+        //End of AI-enhanced code block
+
         alert("Payment Success!");
         window.location.href = "success.html";
       }

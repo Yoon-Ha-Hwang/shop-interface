@@ -55,14 +55,34 @@
       }
     
       let totalDiscount = currentValue / 100;
+
+      //The below blocks of code involving sessionStorage are AI-enhanced
       if(remainingPrice > totalDiscount) {
         remainingPrice -= totalDiscount;
         alert("You have elected to use " + currentValue + " credits. You will pay " + remainingPrice + " on the following page.");
-        window.location.href = "stripe2.html";
         sessionStorage.setItem("remainingPrice", String(remainingPrice)); //Export value to stripe2.html
+        sessionStorage.setItem("paymentReceipt", JSON.stringify({
+          buyerName: "",
+          cardLast4: "",
+          totalBill: remainingPrice + totalDiscount,
+          creditsUsed: currentValue,
+          remainingPrice,
+          selectedCurrency: "",
+          totalDue: 0
+        }));
+        window.location.href = "stripe2.html";
       } else { //The amount of credits entered is suffice to pay the bill
         currentValue = remainingPrice * 100 //Prevent over-spending of credits
         alert("You have paid the bill in full by using " + currentValue + " credits. Thank you for your purchase!");
+        sessionStorage.setItem("paymentReceipt", JSON.stringify({
+          buyerName: "",
+          cardLast4: "",
+          totalBill: remainingPrice,
+          creditsUsed: currentValue,
+          remainingPrice: 0,
+          selectedCurrency: "Store credits",
+          totalDue: 0
+        }));
         window.location.href = "success.html";
       }
     }

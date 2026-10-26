@@ -122,3 +122,13 @@ Sorry for bad naming conventions, I hope you understand.
     max-height: 64px;
     min-height: 64px;
 }
+
+.checkoutresult {
+    background-color: #333333;
+    color: #EEEEEE;
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 500px;
+    min-width: 500px;
+    max-height: 800px;
+    min-height: 800px;
+}

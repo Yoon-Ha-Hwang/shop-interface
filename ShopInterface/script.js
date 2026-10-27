@@ -37,16 +37,52 @@ class Products {
     }
 }
 
-const inventory = [
-    new Products("A1", "A", 1),
-    new Products("B1", "B", 2),
-    new Products("C1", "C", 3),
-    new Products("D1", "D", 4),
-    new Products("E1", "E", 5),
-    new Products("F1", "F", 6),
-    new Products("G1", "G", 7),
-    new Products("H1", "H", 8),
-    new Products("I1", "I", 9),
+//Reminder, this is name-info-price
+const inventory = [ 
+    new Products( //0
+        "Vibe Coding OS (1 year licence)",
+        "This OS will generate code beyond human comprehension.<br><br>Included with purchase (99 years licences):<ul><li>Job Hunt OS</li><li>Burning Tokens like Papiermarks OS</li><li>Windows 11 :( no money to buy MacOS</li></ul>", 
+        300000),
+    new Products( //1
+        "Big Red Button", 
+        "This button will instantly make all Claude users wait 5 hours to use Claude AI again, no matter the subscription level.<br><br>100% functionality guaranteed!<br>How do I know? Because a customer is using an autoclicker on the button right now.", 
+        5000),
+    new Products( //2
+        "Radon Medicine Bottle", 
+        "Volume: 28.3mL (1 ounce)<br>Potency: 1 sievert<br>Energy: a lot of kilojoules<br>Proteins: 0mg<br>Carbohydrates: 0mg<br>Fat: 0mg<br>Functionality: I don't know, you tell me.", 
+        40),
+    new Products( //3
+        "Hot Cross Bun", 
+        "Good luck trying to eat it...", 
+        3),
+    new Products( //4
+        "Hamburger", 
+        "Ham not included.",
+        17),
+    new Products( //5
+        "One Straits Dollar",
+        "I think someone said they are worth 2s4d.<br>But that means it's not even worth one pound though...",
+        7000),
+    new Products( //6
+        "2 Ringgits Banknote",
+        "Do they really exist?<br>Never seen one before.", 
+        800),
+    new Products( //7
+        "Random Altcoin",
+        "Trust me bro, forget about the tech people who say it's not even worth $10<sup>-5</sup>, they are just losers. I promise you, they gonna cry when this coin is worth $10<sup>5</sup>!1!1!1<sup>*</sup><br><br><small>* Previous successes do not guarantee future successes.</small>",
+        1),
+    new Products( //8
+        "Certificate of Entitlement", 
+        "You need it to complete the 5Cs<br><br>(ERP and Touch n' Go not included)", 
+        120000),
+    new Products( //9
+        "1000 Kudos", 
+        "You can trade it for 1000 upvotes/likes/thumbs ups/5 stars/etc. on any social media platform.<br><br>Examples (not exhaustive): Google Maps, Reddit, Instagram, Facebook, Twitter, YouTube, LinkedIn, WeChat, Douyin, Xiaohongshu, etc.<br><br><small>We cannot be held liable if they get revoked or your account is suspended.</small>", 
+        40),
+    new Products( //10
+        "English-Claudish Translator OS", 
+        "Limited time deal! Buy 1 Get 3: <ul><li>English-English Translator OS [FREE]</li><li>Claudish-Claudish Translator OS [FREE]</li><li>Unlimited rights to use the English-English OS and the Claudish-Claudish OS however you like (but not the English-Claudish OS).</li></ul>", 
+        70),
 ];
 
 //Start of AI-enhanced code segment
@@ -107,7 +143,7 @@ function renderReceipt() {
             if(receipt != "") {
                 receipt += "<br>";
             }
-            receipt += inventory[i].getCount() + "x " + inventory[i].getName() + ", (" 
+            receipt += inventory[i].getCount() + "x " + inventory[i].getName() + " (" 
             receipt += '<img src = "Custom Currency Icon.png" alt = "$" width="12px" height="19.2px"></img>' + inventory[i].getPrice() + " each)";
         }
     }
@@ -128,7 +164,7 @@ function totalBillwithIcon() {
     let totalBillwithIcon = 0;
     for(let i = 0; i < inventory.length; i++) {
         if(inventory[i].getCount() != 0) {
-            totalBill += inventory[i].getCount() * inventory[i].getPrice();
+            totalBillwithIcon += inventory[i].getCount() * inventory[i].getPrice();
         }
     }
     totalBillwithIcon = '<img src = "Custom Currency Icon.png" alt = "$" width="12px" height="19.2px"></img>' + totalBillwithIcon.toString();

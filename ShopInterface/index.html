@@ -8,12 +8,29 @@
 </head>
 
 <body>
-  <h1 class="font">Welcome to our store!</h1>
-  <h2 class="font">Browse our product catalogue below.</h2>
-  <h3 class="font">Bestsellers</h2>
-  <div class="deck" id="deck1"> <!-- Multiple cards are in a "deck" -->
+  <h1 class="font" id="welcome1">Welcome to our store!</h1>
+  <h2 class="font" id="welcome2">Browse our product catalogue below.</h2>
+
+  <div class="font" id="header">
+    <small>Skip to section:</small>
+    <a href="#CC">Coders Central</a>
+    <a href="#foodies">Foodies</a>
+    <a href="#MM">Money Museum</a>
+    <a href="#miscellaneous">Miscellaneous</a>
+  </div>
+
+  <script>
+    function misc() {
+      
+    }
+  </script>
+
+  <!-- When you add a new product don't forget to update script.js -->
+  <!-- Also make sure you got the numbers correct -->
+  <h2 class="heads" id="CC">Coders Central</h2>
+  <div class="deck"> <!-- Multiple cards are in a "deck" -->
     <div class="productcard">
-      <img src = "Product 1.png" alt = "Product 1" width="300px" height="200px">
+      <img src = "OS.png" alt = "Vibe Coding OS (1 year licence)" width="320px" height="200px">
       <p class="productname" id="name0"></p>
       <p class="productinfo" id="info0"></p>
       <p class="productprice" id="price0"></p>
@@ -21,7 +38,7 @@
     </div>
 
     <div class="productcard">
-      <img src = "Product 2.png" alt = "Product 2" width="300px" height="200px">
+      <img src = "Big Red Button.png" alt = "Big Red Button" width="320px" height="200px">
       <p class="productname" id="name1"></p>
       <p class="productinfo" id="info1"></p>
       <p class="productprice" id="price1"></p>
@@ -29,7 +46,18 @@
     </div>
 
     <div class="productcard">
-      <img src = "Product 3.png" alt = "Product 3" width="300px" height="200px">
+      <img src = "No Image.png" alt = "English-Claudish Translator OS (1 year licence)" width="320px" height="200px">
+      <p class="productname" id="name10"></p>
+      <p class="productinfo" id="info10"></p>
+      <p class="productprice" id="price10"></p>
+      <button class="buttondesign" onclick="buyProduct(10)">Add product to cart</button>
+    </div>
+  </div>
+
+  <h3 class="heads" id="foodies">Foodies</h2>
+  <div class="deck">
+    <div class="productcard">
+      <img src = "Radon.png" alt = "Radon Medicine Bottle" width="320px" height="200px">
       <p class="productname" id="name2"></p>
       <p class="productinfo" id="info2"></p>
       <p class="productprice" id="price2"></p>
@@ -37,26 +65,26 @@
     </div>
 
     <div class="productcard">
-      <img src = "Product 4.png" alt = "Product 4" width="300px" height="200px">
+      <img src = "Hot Cross Bun.png" alt = "Hot Cross Bun" width="320px" height="200px">
       <p class="productname" id="name3"></p>
       <p class="productinfo" id="info3"></p>
       <p class="productprice" id="price3"></p>
       <button class="buttondesign" onclick="buyProduct(3)">Add product to cart</button>
     </div>
-  </div>
 
-  <h3 class="font">Steadysellers</h2>
-  <div class="deck" id="deck2">
     <div class="productcard">
-      <img src = "Product 5.png" alt = "Product 5" width="300px" height="200px">
+      <img src = "Hamburger.png" alt = "Hamburger" width="320px" height="200px">
       <p class="productname" id="name4"></p>
       <p class="productinfo" id="info4"></p>
       <p class="productprice" id="price4"></p>
       <button class="buttondesign" onclick="buyProduct(4)">Add product to cart</button>
     </div>
+  </div>
 
+  <h3 class="heads" id="MM">Money Museum</h2>
+  <div class="deck">
     <div class="productcard">
-      <img src = "Product 6.png" alt = "Product 6" width="300px" height="200px">
+      <img src = "1 Dollar.png" alt = "One Straits Dollar" width="320px" height="200px">
       <p class="productname" id="name5"></p>
       <p class="productinfo" id="info5"></p>
       <p class="productprice" id="price5"></p>
@@ -64,7 +92,7 @@
     </div>
 
     <div class="productcard">
-      <img src = "Product 7.png" alt = "Product 7" width="300px" height="200px">
+      <img src = "RM2.png" alt = "Two Ringgits Banknote" width="320px" height="200px">
       <p class="productname" id="name6"></p>
       <p class="productinfo" id="info6"></p>
       <p class="productprice" id="price6"></p>
@@ -72,23 +100,40 @@
     </div>
 
     <div class="productcard">
-      <img src = "Product 8.png" alt = "Product 8" width="300px" height="200px">
+      <img src = "Altcoin.png" alt = "Random Altcoin" width="320px" height="200px">
       <p class="productname" id="name7"></p>
       <p class="productinfo" id="info7"></p>
       <p class="productprice" id="price7"></p>
       <button class="buttondesign" onclick="buyProduct(7)">Add product to cart</button>
     </div>
+  </div>
 
+  <h3 class="heads" id="miscellaneous">Miscellaneous</h2>
+  <div class="deck">
     <div class="productcard">
-      <img src = "Product 9.png" alt = "Product 9" width="300px" height="200px">
+      <img src = "COE.png" alt = "Certificate of Entitlement" width="320px" height="200px">
       <p class="productname" id="name8"></p>
       <p class="productinfo" id="info8"></p>
       <p class="productprice" id="price8"></p>
       <button class="buttondesign" onclick="buyProduct(8)">Add product to cart</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Kudos.png" alt = "1000 Kudos" width="320px" height="200px">
+      <p class="productname" id="name9"></p>
+      <p class="productinfo" id="info9"></p>
+      <p class="productprice" id="price9"></p>
+      <button class="buttondesign" onclick="buyProduct(9)">Add product to cart</button>
     </div>
   </div>
 
   <button class="buttondesign" onclick="checkout()">Continue to Checkout</button>
   <script src="script.js"></script>
   <script>renderProducts();</script>
+
+  <footer>
+    <br><br>
+    <img src = "Company Logo.png" alt="Can Tho Enterprises Pte. Ltd." width="150px" height="90px"> 
+    <br>Disclaimer: The entire website is for demonstration purposes only. No information presented here is factually true.
+  </footer>
 </body>

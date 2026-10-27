@@ -9,8 +9,11 @@
 
 <body>
     <h2 class="font">Thank you for your purchase!</h2>
-    <h3 class="font">Here are your details: </h3>
+    <h3 class="font">Here are your purchase details: </h3>
     <div class="checkoutresult">
+        <h2>RECEIPT</h2>
+        <img src="Company Logo.png" width="160px" height="100px">
+        <h4>Can Tho Enterprises Pte. Ltd.</h4>
         <h4>Purchase information</h4>
         <small id="displayPurchase"></small>
         <br>
@@ -37,19 +40,19 @@
     <script>
         function displayPurchase() {
             let productsbought = "";
-            let totalToPay = 0;
+            let toPay = 0;
             for(let i = 0; i < inventory.length; i++) {
                 if(inventory[i].getCount() != 0) {
                     if(productsbought != "") {
                         productsbought += "<br>";
                     }
-                    productsbought += inventory[i].getCount() + "x " + inventory[i].getName() + ", (" 
-                    productsbought += '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + inventory[i].getPrice() + " each)";
-                    totalToPay += inventory[i].getPrice() * inventory[i].getCount();
+                    productsbought += inventory[i].getCount() + "x " + inventory[i].getName();
+                    productsbought += " (" + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + inventory[i].getPrice() + " each)";
+                    toPay += inventory[i].getPrice() * inventory[i].getCount();
                 }
             }
             document.getElementById("displayPurchase").innerHTML = productsbought;
-            totalToPay = "Grand total: " + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + totalToPay;
+            totalToPay = "Grand total: " + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + toPay;
             document.getElementById("totalToPay").innerHTML = totalToPay;
         }
 
@@ -64,7 +67,7 @@
         //End of AI-enhanced code block
         //This part used to be AI-enhanced but I changed most of it
         if(receipt.remainingPrice != 0) {
-            document.getElementById("originalPrice").innerHTML = "Total paid: " + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>'
+            document.getElementById("originalPrice").innerHTML = "Total paid: " + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + receipt.remainingPrice;
             document.getElementById("totalDue").innerHTML = "Total charged: " + receipt.selectedCurrency + " " + Number(receipt.totalDue).toFixed(2);
 
         } else {
@@ -85,4 +88,10 @@
 
         displayPurchase();
     </script>
+
+    <footer>
+        <br><br>
+        <img src = "Company Logo.png" alt="Can Tho Enterprises Pte. Ltd." width="150px" height="90px"> 
+        <br>Disclaimer: The entire website is for demonstration purposes only. No information presented here is factually true.
+    </footer>
 </body>

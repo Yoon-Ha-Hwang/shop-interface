@@ -5,32 +5,64 @@ NOTE TO SELF
 */
 
 /* It is advised that a deck contains no more than 5 productcards */
+
+body {
+    background-color: #CCCCCC;
+}
+
+#header {
+    display:inline-block;
+    height: 20px;
+    gap: 50px;
+    padding: 10px;
+    background:#DDDDDD;
+    border-radius:6px;
+    border-color: #BBBBBB;
+    text-decoration-color: transparent;
+}
+
 .deck {
     display: flex;
     gap: 20px;
-}
-
-/* Avoid using colours similar to gold or magenta because that overlaps with the custom currency icon */
-#deck1 {
-    background-color: #00CC33;
-}
-
-#deck2 {
-    background-color: #00AAFF;
+    background-color: #EEEEEE;
+    border-radius: 10px;
+    border-color: #AAAAAA;
 }
 
 .productcard { 
+    margin: 10px;
     display: flex;
     flex: 1;
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 320px;
+    min-width: 320px;
     flex-direction: column;
+    background-color: #DDDDDD;
+    border-color: #FFFFFF;
+    border-radius: 10px;
 }
 
 .font {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.heads {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #AAAAAA;
+    border-color: #C0C0C0;
+    border-radius: 4px;
+    font-size: 24px;
+    margin: 12px;
+    gap: 12px;
+    padding: 5px;
+}
+
+#welcome1 {
+    font-size: 50px;
+}
+
+#welcome2{
+    font-size: 30px;
+}
 .productname {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 16px;
@@ -45,8 +77,8 @@ NOTE TO SELF
     font-weight: 300;
     max-width: 300px;
     min-width: 300px;
-    max-height: 30px;
-    min-height: 30px;
+    max-height: 100px;
+    min-height: 100px;
     flex: 30px;
     overflow: scroll;
 }
@@ -63,21 +95,21 @@ NOTE TO SELF
     display:inline-block;
     width: 100px;
     height: 50px;
-    background:#FF107F;
+    background:#DDDDDD;
     border-radius:6px;
-    border-color: #FFA0F0;
+    border-color: #BBBBBB;
 }
 
 .receiptdesign {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    background-color: #10A0EE;
+    background-color: #DDDDDD;
     border-radius: 6px;
-    border-color: #0090DD;
+    border-color: #BBBBBB;
     font-size: 20px;
-    max-width: 300px;
-    min-width: 300px;
-    max-height: 200px;
-    min-height: 200px;
+    max-width: 600px;
+    min-width: 600px;
+    max-height: 400px;
+    min-height: 400px;
     overflow: scroll;
 }
 
@@ -97,9 +129,9 @@ Sorry for bad naming conventions, I hope you understand.
 }
 
 .stripe {
-    background-color: #66FF00;
+    background-color: #DDDDDD;
     border-radius: 6px;
-    border-color: #44DD00;
+    border-color: #BBBBBB;
     max-width: 350px;
     min-width: 350px;
 }
@@ -124,11 +156,14 @@ Sorry for bad naming conventions, I hope you understand.
 }
 
 .checkoutresult {
-    background-color: #333333;
-    color: #EEEEEE;
+    background-color: #DDDDDD;
+    border-color: #BBBBBB;
+    border-radius: 40px;
+    padding: 20px;
+    color: #111111;
     font-family: 'Times New Roman', Times, serif;
-    max-width: 500px;
-    min-width: 500px;
-    max-height: 800px;
-    min-height: 800px;
+    max-width: 400px;
+    min-width: 400px;
+    max-height: 640px;
+    min-height: 640px;
 }

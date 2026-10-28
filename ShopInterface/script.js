@@ -41,7 +41,7 @@ class Products {
 const inventory = [ 
     new Products( //0
         "Vibe Coding OS (1 year licence)",
-        "This OS will generate code beyond human comprehension.<br><br>Included with purchase (99 years licences):<ul><li>Job Hunt OS</li><li>Burning Tokens like Papiermarks OS</li><li>Windows 11 :( no money to buy MacOS</li></ul>", 
+        "This OS will generate code beyond human comprehension.<br><br>Included with purchase (99 years licences):<ul><li>Job Hunt OS</li><li>Burning Tokens like Papiermarks OS</li><li>Windows 11 :( no money to buy MacOS</li><li>Computer Assisted Foreclosure OS</li><li>Electric stove computer expansion CAD set</li></ul>", 
         300000),
     new Products( //1
         "Big Red Button", 
@@ -60,16 +60,16 @@ const inventory = [
         "Ham not included.",
         17),
     new Products( //5
-        "One Straits Dollar",
-        "I think someone said they are worth 2s4d.<br>But that means it's not even worth one pound though...",
-        7000),
+        "An Hour of Time",
+        "STACKABLE work hours for sale ($65 per hour)<br><br>Sure, money can't buy time...<br>... but it <strong>DOES</strong> buy someone else's.<br><br>It's so OP that nature forced us to limit sales to 24 hours per day.",
+        65),
     new Products( //6
-        "2 Ringgits Banknote",
-        "Do they really exist?<br>Never seen one before.", 
-        800),
+        "CS Research Grant (10 USD)",
+        "Although why would you spend money to buy a grant, when you can just pay yourself?", 
+        12),
     new Products( //7
         "Random Altcoin",
-        "Trust me bro, forget about the tech people who say it's not even worth $10<sup>-5</sup>, they are just losers. I promise you, they gonna cry when this coin is worth $10<sup>5</sup>!1!1!1<sup>*</sup><br><br><small>* Previous successes do not guarantee future successes.</small>",
+        "Trust me bro, forget about the tech people who say it's not even worth $10<sup>-5</sup>, they are just losers. I promise you, they gonna cry when this coin is worth $10<sup>5</sup>!1!1!1<sup>*</sup><br><br><small>* Previous successes do not guarantee future successes. Claims presented have not yet been verified by the FTC.</small>",
         1),
     new Products( //8
         "Certificate of Entitlement", 
@@ -81,8 +81,12 @@ const inventory = [
         40),
     new Products( //10
         "English-Claudish Translator OS", 
-        "Limited time deal! Buy 1 Get 3: <ul><li>English-English Translator OS [FREE]</li><li>Claudish-Claudish Translator OS [FREE]</li><li>Unlimited rights to use the English-English OS and the Claudish-Claudish OS however you like (but not the English-Claudish OS).</li></ul>", 
+        "Limited time deal! Buy 1 Get 3: <ul><li>English-English Translator OS [FREE]</li><li>Claudish-Claudish Translator OS [FREE]</li><li>English-Claudish Translator OS is AI-powered, so it's still rate-limited.</li></ul>", 
         70),
+    new Products( //11
+        "Random Altcoin (Short Option)",
+        "Great choice, you gonna make trillions more than the normal version<sup>*</sup>. Forget about what the disclaimer says, they are just hallucinating.<br><br><small>* Previous successes do not guarantee future successes. Claims presented have not yet been verified by the FTC. This investment product involves high risks and the potential to lose more than what was invested.</small>",
+        1),
 ];
 
 //Start of AI-enhanced code segment

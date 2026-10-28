@@ -84,29 +84,117 @@
   <h3 class="heads" id="MM">Money Museum</h2>
   <div class="deck">
     <div class="productcard">
-      <img src = "1 Dollar.png" alt = "One Straits Dollar" width="320px" height="200px">
+      <img src = "No Image.png" alt = "An Hour of Time" width="320px" height="200px">
       <p class="productname" id="name5"></p>
       <p class="productinfo" id="info5"></p>
       <p class="productprice" id="price5"></p>
-      <button class="buttondesign" onclick="buyProduct(5)">Add product to cart</button>
+      <input id="hoursCount" type="number" min="0" max="1000000000" value="1" step="1"
+      onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
+      <button class="buttondesign" onclick="buyHours()">Confirm Quantity</button>
     </div>
 
     <div class="productcard">
-      <img src = "RM2.png" alt = "Two Ringgits Banknote" width="320px" height="200px">
+      <img src = "Grant.png" alt = "CS Research Grant (10 USD)" width="320px" height="200px">
       <p class="productname" id="name6"></p>
       <p class="productinfo" id="info6"></p>
       <p class="productprice" id="price6"></p>
-      <button class="buttondesign" onclick="buyProduct(6)">Add product to cart</button>
+      <input id="grantCount" type="number" min="0" max="1000000000" value="1" step="1"
+      onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
+      <button class="buttondesign" onclick="buyGrant()">Confirm Quantity</button>
     </div>
 
     <div class="productcard">
       <img src = "Altcoin.png" alt = "Random Altcoin" width="320px" height="200px">
       <p class="productname" id="name7"></p>
       <p class="productinfo" id="info7"></p>
-      <p class="productprice" id="price7"></p>
-      <button class="buttondesign" onclick="buyProduct(7)">Add product to cart</button>
+      <p class="productprice" id="price7"></p> <!-- This one was modified from stripe.html -->
+      <input id="altcoinCount" type="number" min="0" max="1000000000" value="1" step="1"
+      onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
+      <button class="buttondesign" onclick="buyAltcoin()">Confirm Quantity</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Altcoin.png" alt = "Random Altcoin (Short Option)" width="320px" height="200px">
+      <p class="productname" id="name11"></p>
+      <p class="productinfo" id="info11"></p>
+      <p class="productprice" id="price11"></p>
+      <input id="shortCount" type="number" min="0" max="1000000000" value="1" step="1"
+      onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
+      <button class="buttondesign" onclick="buyShort()">Confirm Quantity</button>
     </div>
   </div>
+
+  <script>
+    const hoursspinbox = document.getElementById("hoursCount");
+
+    function buyHours() {
+      const currentHours = Number(
+        document.getElementById("hoursCount").value
+      );
+      if(currentHours == 0) {
+        alert("If you want to buy zero, why click on it lol.");
+      } else if((currentHours + inventory[5].count) > 24) {
+        alert("... we just explained why we can't offer you more than 24 hours a day even if we wanted to...")
+      } else if(currentHours == 1) {
+        alert("Added 1 Hour to cart!");
+        inventory[5].count++;
+      } else {
+        alert("Added " + currentHours + " Hours to cart!");
+        inventory[5].count += currentHours;
+      }
+    }
+
+    const grantSpinbox = document.getElementById("grantCount");
+
+    function buyGrant() {
+      const currentGrant = Number(
+        document.getElementById("grantCount").value
+      );
+      if(currentGrant == 0) {
+        alert("If you want to buy zero, why click on it lol.");
+      } else if(currentGrant == 1) {
+        alert("Added a 10 USD CS Research Grant to cart!");
+        inventory[6].count++;
+      } else {
+        alert("Added " + currentGrant + " stackable 10 USD CS Research Grants to cart!");
+        inventory[6].count += currentGrant;
+      }
+    }
+
+    const shortspinbox = document.getElementById("shortCount");
+
+    function buyShort() {
+      const currentShort = Number(
+        document.getElementById("shortCount").value
+      );
+      if(currentShort == 0) {
+        alert("If you want to buy zero, why click on it lol.");
+      } else if(currentShort == 1) {
+        alert("Added 1 altcoin short contract to cart!");
+        inventory[11].count++;
+      } else {
+        alert("Added " + currentShort + " altcoin short contract to cart!");
+        inventory[11].count += currentShort;
+      }
+    }
+
+    const altcoinspinbox = document.getElementById("altcoinCount");
+
+    function buyAltcoin() {
+      const currentAltcoin = Number(
+        document.getElementById("altcoinCount").value
+      );
+      if(currentAltcoin == 0) {
+        alert("If you want to buy zero, why click on it lol.");
+      } else if(currentAltcoin == 1) {
+        alert("Added 1 altcoin to cart!");
+        inventory[7].count++;
+      } else {
+        alert("Added " + currentAltcoin + " altcoins to cart!");
+        inventory[7].count += currentAltcoin;
+      }
+    }
+  </script>
 
   <h3 class="heads" id="miscellaneous">Miscellaneous</h2>
   <div class="deck">
@@ -134,6 +222,6 @@
   <footer>
     <br><br>
     <img src = "Company Logo.png" alt="Can Tho Enterprises Pte. Ltd." width="150px" height="90px"> 
-    <br>Disclaimer: The entire website is for demonstration purposes only. No information presented here is factually true.
+    <br>Disclaimer: The entire website is for demonstration purposes only. Information presented might not be factually true, and are intended for entertainment. Developer is not liable for any losses arising due to the trust of information presented on this demonstration. 
   </footer>
 </body>

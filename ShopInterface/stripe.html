@@ -38,12 +38,13 @@
   <script src="script.js"></script>
 
   <script>
+    alert("If you wish to use zero credits, you can enter any number between 1 to 99");
     restoreCart();
     totalBillwithIcon();
     //Start of AI enhanced block of code
-    const spinbox = document.getElementById("creditcount");
+    const creditspinbox = document.getElementById("creditcount");
 
-    spinbox.addEventListener("change", (event) => {
+    creditspinbox.addEventListener("change", (event) => {
       let currentValue = Number(event.target.value);
     //End of AI enhanced block of code
 
@@ -92,6 +93,6 @@
   <footer>
     <br><br>
     <img src = "Company Logo.png" alt="Can Tho Enterprises Pte. Ltd." width="150px" height="90px"> 
-    <br>Disclaimer: The entire website is for demonstration purposes only. No information presented here is factually true.
+    <br>Disclaimer: The entire website is for demonstration purposes only. Information presented might not be factually true, and are intended for entertainment. Developer is not liable for any losses arising due to the trust of information presented on this demonstration. 
   </footer>
 </body>

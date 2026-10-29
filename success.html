@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Payment Complete!</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h2 class="font">Thank you for your purchase!</h2>
+    <h3 class="font">Here are your purchase details: </h3>
+    <div class="checkoutresult">
+        <h2>RECEIPT</h2>
+        <img src="Company Logo.png" width="160px" height="100px">
+        <h4>Can Tho Enterprises Pte. Ltd.</h4>
+        <h4>Purchase information</h4>
+        <small id="displayPurchase"></small>
+        <br>
+        <small id="totalToPay"></small>
+        <h4>Buyer information</h4>
+        <small id="buyername"></small>
+        <br>
+        <small id="buyercard"></small> <!-- This will be truncated to display the last four values in the <script> -->
+        <br>
+        <h4>Payment information</h4>
+        <small id="currentValue"></small> <!-- Reminder, this is the value for the number of credits entered -->
+        <br>
+        <small id="originalPrice"></small>
+        <br>
+        <small id="selectedCurrency"></small>
+        <br>
+        <small id="totalDue"></small>
+    </div>
+    <p class="font">Thank you and please come again!</p>
+    <button class="buttondesign" onclick="toStart()">Back to shop</button>
+
+    <script src="script.js"></script>
+
+    <script>
+        function displayPurchase() {
+            let productsbought = "";
+            let toPay = 0;
+            for(let i = 0; i < inventory.length; i++) {
+                if(inventory[i].getCount() != 0) {
+                    if(productsbought != "") {
+                        productsbought += "<br>";
+                    }
+                    productsbought += inventory[i].getCount() + "x " + inventory[i].getName();
+                    productsbought += " (" + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + inventory[i].getPrice() + " each)";
+                    toPay += inventory[i].getPrice() * inventory[i].getCount();
+                }
+            }
+            document.getElementById("displayPurchase").innerHTML = productsbought;
+            totalToPay = "Grand total: " + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + toPay;
+            document.getElementById("totalToPay").innerHTML = totalToPay;
+        }
+
+        //Start of AI-enhanced code block
+        const receipt = JSON.parse(sessionStorage.getItem("paymentReceipt") || "{}");
+        
+        document.getElementById("buyername").innerHTML = receipt.buyerName || "Anonymous";
+        document.getElementById("buyercard").innerHTML = receipt.cardLast4
+            ? "Card ending in " + receipt.cardLast4
+            : "(no card payment required)";
+        document.getElementById("currentValue").innerHTML = "Store credits used: " + (receipt.creditsUsed || 0);
+        //End of AI-enhanced code block
+        //This part used to be AI-enhanced but I changed most of it
+        if(receipt.remainingPrice != 0) {
+            document.getElementById("originalPrice").innerHTML = "Total paid: " + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + receipt.remainingPrice;
+            document.getElementById("totalDue").innerHTML = "Total charged: " + receipt.selectedCurrency + " " + Number(receipt.totalDue).toFixed(2);
+
+        } else {
+            document.getElementById("originalPrice").innerHTML = "Fully paid using store credits";
+            document.getElementById("totalDue").innerHTML = "Enjoy your free merchandise! :D";
+        }
+        //End
+
+        function toStart() { //This function executes the "factory reset"
+            for(let i = 0; i < inventory.length; i++) { //Reset all product counts to zero
+                inventory[i].count = 0;
+            }
+            saveCart();
+            sessionStorage.removeItem("paymentReceipt");
+            sessionStorage.removeItem("remainingPrice");
+            window.location.href = "index.html";
+        }
+
+        displayPurchase();
+    </script>
+
+    <footer>
+        <br><br>
+        <img src = "Company Logo.png" alt="Can Tho Enterprises Pte. Ltd." width="150px" height="90px"> 
+    <br>Disclaimer: The entire website is for demonstration purposes only. Information presented might not be factually true, and are intended for entertainment. Developer is not liable for any losses arising due to the trust of information presented on this demonstration. 
+    </footer>
+</body>

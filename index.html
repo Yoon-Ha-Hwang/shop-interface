@@ -35,6 +35,7 @@
       <p class="productinfo" id="info0"></p>
       <p class="productprice" id="price0"></p>
       <button class="buttondesign" onclick="buyProduct(0)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(0)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -43,6 +44,7 @@
       <p class="productinfo" id="info1"></p>
       <p class="productprice" id="price1"></p>
       <button class="buttondesign" onclick="buyProduct(1)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(1)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -51,6 +53,7 @@
       <p class="productinfo" id="info10"></p>
       <p class="productprice" id="price10"></p>
       <button class="buttondesign" onclick="buyProduct(10)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(10)">Remove product</button>
     </div>
   </div>
 
@@ -62,6 +65,7 @@
       <p class="productinfo" id="info2"></p>
       <p class="productprice" id="price2"></p>
       <button class="buttondesign" onclick="buyProduct(2)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(2)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -70,6 +74,7 @@
       <p class="productinfo" id="info3"></p>
       <p class="productprice" id="price3"></p>
       <button class="buttondesign" onclick="buyProduct(3)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(3)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -78,6 +83,7 @@
       <p class="productinfo" id="info4"></p>
       <p class="productprice" id="price4"></p>
       <button class="buttondesign" onclick="buyProduct(4)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(4)">Remove product</button>
     </div>
   </div>
 
@@ -91,6 +97,7 @@
       <input id="hoursCount" type="number" min="0" max="1000000000" value="1" step="1"
       onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
       <button class="buttondesign" onclick="buyHours()">Confirm Quantity</button>
+      <button class="buttondesign" onclick="removeProduct(5)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -101,6 +108,7 @@
       <input id="grantCount" type="number" min="0" max="1000000000" value="1" step="1"
       onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
       <button class="buttondesign" onclick="buyGrant()">Confirm Quantity</button>
+      <button class="buttondesign" onclick="removeProduct(6)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -111,6 +119,7 @@
       <input id="altcoinCount" type="number" min="0" max="1000000000" value="1" step="1"
       onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
       <button class="buttondesign" onclick="buyAltcoin()">Confirm Quantity</button>
+      <button class="buttondesign" onclick="removeProduct(7)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -121,6 +130,19 @@
       <input id="shortCount" type="number" min="0" max="1000000000" value="1" step="1"
       onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);">      
       <button class="buttondesign" onclick="buyShort()">Confirm Quantity</button>
+      <button class="buttondesign" onclick="removeProduct(11)">Remove product</button>
+    </div>
+
+    <br>
+    <div class="productcard">
+      <img src = "No Image.png" alt = "Vacation (1 Day)" width="320px" height="200px">
+      <p class="productname" id="name12"></p>
+      <p class="productinfo" id="info12"></p>
+      <p class="productprice" id="price12"></p>
+      <input id="vacationCount" type="number" min="0" max="1000000000" value="1" step="1"
+      onkeydown="return ['Backspace', 'Delete', 'ArrowUp', 'ArrowDown', 'Tab'].includes(event.key) || /[0-9]/.test(event.key);"> 
+      <button class="buttondesign" onclick="buyVacation()">Confirm Quantity</button>
+      <button class="buttondesign" onclick="removeProduct(12)">Remove product</button>
     </div>
   </div>
 
@@ -194,6 +216,21 @@
         inventory[7].count += currentAltcoin;
       }
     }
+
+    function buyVacation() {
+      const currentVacation = Number(
+        document.getElementById("vacationCount").value
+      );
+      if(currentVacation == 0) {
+        alert("If you want to buy zero, why click on it lol.");
+      } else if(currentVacation == 1) {
+        alert("Added 1 day of vacation to cart! Your destination will be revealed on checkout.");
+        inventory[12].count++;
+      } else {
+        alert("Added " + currentVacation + " days of vacation to cart! Your destination will be revealed on checkout.");
+        inventory[12].count += currentVacation;
+      }
+    }
   </script>
 
   <h3 class="heads" id="miscellaneous">Miscellaneous</h2>
@@ -204,6 +241,7 @@
       <p class="productinfo" id="info8"></p>
       <p class="productprice" id="price8"></p>
       <button class="buttondesign" onclick="buyProduct(8)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(8)">Remove product</button>
     </div>
 
     <div class="productcard">
@@ -212,6 +250,16 @@
       <p class="productinfo" id="info9"></p>
       <p class="productprice" id="price9"></p>
       <button class="buttondesign" onclick="buyProduct(9)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(9)">Remove product</button>
+    </div>
+
+    <div class="productcard">
+      <img src = "Joke.png" alt = "Joke" width="320px" height="200px">
+      <p class="productname" id="name13"></p>
+      <p class="productinfo" id="info13"></p>
+      <p class="productprice" id="price13"></p>
+      <button class="buttondesign" onclick="buyProduct(13)">Add product to cart</button>
+      <button class="buttondesign" onclick="removeProduct(13)">Remove product</button>
     </div>
   </div>
 

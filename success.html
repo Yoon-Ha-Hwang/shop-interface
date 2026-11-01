@@ -31,6 +31,8 @@
         <small id="selectedCurrency"></small>
         <br>
         <small id="totalDue"></small>
+        <h4 id="vacationtitle"></h4>
+        <p id="vacationinfo"></p>
     </div>
     <p class="font">Thank you and please come again!</p>
     <button class="buttondesign" onclick="toStart()">Back to shop</button>
@@ -54,6 +56,25 @@
             document.getElementById("displayPurchase").innerHTML = productsbought;
             totalToPay = "Grand total: " + '<img src = "Custom Currency Icon.png" alt = "$" width="7.5px" height="12px"></img>' + toPay;
             document.getElementById("totalToPay").innerHTML = totalToPay;
+
+            if(inventory[12].getCount() != 0) {
+                document.getElementById("vacationtitle").innerHTML = "Vacation Information";
+                let message = "<small>Your destination is</small><br>";
+                let RNG = Math.floor(Math.random() * 4);
+                if(RNG == 0) {
+                    message += "SOVIET UNION (1943)<br><small>Welcome Comrade " + receipt.buyerName + "! We are glad to have you here.<br>You will go to Leningrad. We hope you stay there!</small>";
+                } else if(RNG == 1) {
+                    message += "NORTH KOREA (1998)<br><small>Welcome Comrade " + receipt.buyerName + "! We are glad to have you here.<br>Now kindly surrender all your dollars and rice to the state. Our dear leader and his friends are starving.</small>";
+                } else if(RNG == 2) {
+                    message += "CHINA (1934)<br><small>Welcome Comrade " + receipt.buyerName + "! We are glad to have you here.<br>We will embark on the Long March. It will involve a lot of hiking and river crossing, but hey, that's the spirit!</small>";
+                } else if(RNG == 3) {
+                    message += "EAST GERMANY (1989)<br><small>Welcome Comrade " + receipt.buyerName + "! We are glad to have you here.<br>Please volunteer and help us in our effort to keep the wall standing! There are too many spies trying to break or go over it these days.</small>";
+                }
+                document.getElementById("vacationinfo").innerHTML = message;
+            } else {
+                document.getElementById("vacationtitle").innerHTML = "";
+                document.getElementById("vacationinfo").innerHTML = "";
+            }
         }
 
         //Start of AI-enhanced code block

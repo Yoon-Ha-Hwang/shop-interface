@@ -166,4 +166,5 @@ Sorry for bad naming conventions, I hope you understand.
     min-width: 400px;
     max-height: 640px;
     min-height: 640px;
+    overflow: scroll;
 }

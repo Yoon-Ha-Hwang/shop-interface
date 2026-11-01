@@ -8,15 +8,15 @@ class Products {
 
     buy() {
         this.count++;
-        alert("Added " + this.name + " to cart!");
+        console.log("Added " + this.name + " to cart!");
     }
 
     remove() {
         if(this.count != 0) {
-            alert("Removed " + this.name + " from the cart.");
+            console.log("Removed " + this.name + " from the cart.");
             this.count = 0;
         } else {
-            alert("You don't have any " + this.name + " in your cart.");
+            console.log("You don't have any " + this.name + " in your cart.");
         }
     }
 
@@ -87,6 +87,14 @@ const inventory = [
         "Random Altcoin (Short Option)",
         "Great choice, you gonna make trillions more than the normal version<sup>*</sup>. Forget about what the disclaimer says, they are just hallucinating.<br><br><small>* Previous successes do not guarantee future successes. Claims presented have not yet been verified by the FTC. This investment product involves high risks and the potential to lose more than what was invested.</small>",
         1),
+    new Products( //12
+        "Vacation (1 day, stackable)",
+        "The good side is that it's on discount.<br>The down side is that you don't know where it is.<br>But hey, life is a game of luck, no?",
+        500),
+    new Products( //13
+        "Joke",
+        "It takes longer to generate than to ship, honestly...<br>Non-tranferrable. Any reproduction of the joke is strictly prohibited.",
+        9)
 ];
 
 //Start of AI-enhanced code segment

@@ -83,6 +83,11 @@ body {
     overflow: scroll;
 }
 
+.productinfobutbigger {
+    max-height: 200px;
+    min-height: 200px;
+}
+
 .productprice {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 30px;

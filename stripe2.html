@@ -40,6 +40,7 @@
 
     <br>
     <p class="font"><strong>Please enter your payment details</strong></p>
+    <small class="font">I know that some people may feel uncomfortable typing this field. If that's you, click on the Autofill button, it will automatically plug in made-up credentials.</small>
     <br>
     <input type="text" class="textfield" id="name" placeholder="Your Name">
     <br>
@@ -56,7 +57,8 @@
 
   <div class="paymentinfo">
     <button class="buttondesign" onclick="goBack()">Cancel Payment</button>
-    <button class="buttondesign" onclick="check()">Confirm Payment Info</button>
+    <button class="buttondesign" onclick="autofill()">Autofill</button>
+    <button class="buttondesign" onclick="submit()">Confirm Payment Info</button>
   </div>
 
   <script src="script.js"></script>
@@ -101,13 +103,17 @@
     updateMessage();
     //End of AI-enhanced code block
 
-    function check() {
+    function submit() {
       let nameEntered = document.getElementById("name").value;
       let cardEntered = document.getElementById("cardnumber").value;
       let expiryEntered = document.getElementById("cardexpiry").value;
       let cvvEntered = document.getElementById("cardcvv").value;
       let addressEntered = document.getElementById("billingAddress").value;
-      let emailEntered = document.getElementById("email").value;
+      let emailEntered = document.getElementById("email").value;  
+      check();
+    }
+
+    function check() {
       if(nameEntered.trim() === "") {
         alert("Please enter your name.");
       } else if(cardEntered.trim() === "") {
@@ -133,6 +139,16 @@
         alert("Payment Success!");
         window.location.href = "success.html";
       }
+    }
+
+    function autofill() {
+      let nameEntered = "someone";
+      let cardEntered = 123456789;
+      let expiryEntered = 12/34;
+      let cvvEntered = 123456789;
+      let addressEntered = "somewhere";
+      let emailEntered = "example@example.com";  
+      check();
     }
   </script>
 

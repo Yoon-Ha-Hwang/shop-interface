@@ -94,7 +94,102 @@ const inventory = [
     new Products( //13
         "Joke",
         "It takes longer to generate than to ship, honestly...<br>Non-tranferrable. Any reproduction of the joke is strictly prohibited.",
-        9)
+        9),
+    new Products( //14
+        "Microslop",
+        "This software will change the ACTIVATE WIDOWS watermark to 100% vw and 100% vh. Use it against your arch-enemies (100% anonymous).<br><br> To remove they must prove that they are a widow by uploading her husband's death certificate. To help them out we will also send them this guide: <ol><li>Go to tkinter (that one app where singles swipe dating profiles) and buy a husband</li><li>Read <i>\"A Good Girl's Guide to Murder\"</i></li><li>Get death certificate from gov website</li></ol>It will also ship unskippable <s>Apple Advocacy Ads</s> software updates every 5 minutes until you call off the attack, although why would you? You already crossed the Ruby-con.",
+        42
+    ),
+    new Products( //15
+        "Megaslop",
+        "Microslop too weak for you?<br>Introducing Megaslop a.k.a. Microslop 2.0.<br><br>Features:<ol><li>If the user opens the Microslop clone of Google Sheets, they will be sentenced to Blue Screen of Death and Death By a Thousand Cuts (I mean in real life, not the song because then it's not a retribution)</li><li>Their computer can only use Comic Sans, mojibake, and Command Line Interface</li><li>Everything in the Microslop clone of iCloud account will be replaced by a single OG <i>Oregon Trail</i> game file, even though it's only runnable on an Apple II</li></ol>",
+        666
+    ),
+    new Products( //16
+        "Real e-state",
+        "A digital copy of an authentic U.S. state<br><br><small>Drop Rates:<br>CA: 0.001% [Triple Ultra Super Duper Hyper Ultra Rare]<br>NY:0.001% [Triple Ultra Super Duper Hyper Ultra Rare]<br>TX: 0.001% [Triple Ultra Super Duper Hyper Ultra Rare]<br>Wait, that's a thing?: 99.997% [common asf]</small>",
+        1400000
+    ),
+    new Products( //17
+        "100plus (24 cans)",
+        "Likely eligible for 10c refund scheme",
+        19
+    ),
+    new Products( //18
+        "Oldpaper",
+        "It's anything BUT new",
+        22
+    ),
+    new Products( //19
+        "Google Subtracts",
+        "NO MORE ADDS LESS GO",
+        22
+    ),
+    new Products( //20
+        "Computer Monitor",
+        "By purchasing this item you agree to international cross-border data transfer and storage. You also waive the seller from regulations like PDPA and GDPR. If you disagree then why were you thinking of buying it in the first place?",
+        10
+    ),
+    new Products( //21
+        "Red Flag",
+        "Bro, it's literally a red flag. I warned you so DON'T BLAME ME",
+        1
+    ),
+    new Products( //22
+        "White Flag",
+        "A perfect gift for your Parisian friends in 1940",
+        1
+    ),
+    new Products( //23
+        "Hoover Flag",
+        "A perfect gift for your American friends in 1930",
+        1
+    ),
+    new Products( //24
+        "Time Machine to 1989 CE",
+        "Good luck surviving Millennium Age, no internet for you (Wi-Fi password will not save you)<br><br>Also, enjoy the 50cm cube computers and 100kg radioactive TVs",
+        1989
+    ),
+    new Products( //25
+        "Social Contract",
+        "I mean, sure, if you want a printed copy of it...",
+        300
+    ),
+    new Products( //26
+        "Digital Citizenship",
+        "Obtain citizenship in the digital world to access the Internet<br><br><small>Limit 1 per person. Meatpuppets and Sockpuppets will result in your digital citizenship being revoked.</small>",
+        0
+    ),
+    new Products( //27
+        "Blessing",
+        "Please use it wisely, I sacrificed 1000 Karma points for it",
+        88888888
+    ),
+    new Products( //28
+        "Partner (Business)",
+        "OK. So here's the plan. If our partnership generates $10, you get $4 and I get $4. The other $2 is lost to \"taxes\" EVEN THOUGH TAX COLLECTORS DIDN'T DO ANYTHING IN THIS PARTNERSHIP",
+        99
+    ),
+    new Products( //29
+        "Partner (Foreign Relations)",
+        "OK. So here's the plan. If our partnership generates $10, you get $4 and I get $4. The other $2 is lost to \"taxes\" EVEN THOUGH TAX COLLECTORS DIDN'T DO ANYTHING IN THIS PARTNERSHIP",
+        99
+    ),
+    new Products( //30
+        "Partner (Intimate)",
+        "MoM should increase the labour force in this field to increase the supply and solve the scarcity.",
+        521
+    ),
+    new Products( //31
+        "Sonion Rings",
+        "Included in product: <ul><li>Onion Rings</li><li>Face paint (yellow and blue)</li><li>Paint brush</li><li>Artificial teardrops</li><li>Makeup artist (YouTube grade, 10 min)</li></ul>",
+        140
+    ),
+    new Products( //32
+        "Brotato Chips",
+        "It's just normal chips, what else do you want",
+        3
+    ),
 ];
 
 //Start of AI-enhanced code segment

@@ -103,13 +103,20 @@
     updateMessage();
     //End of AI-enhanced code block
 
+    let nameEntered;
+    let cardEntered;
+    let expiryEntered;
+    let cvvEntered;
+    let addressEntered;
+    let emailEntered;  
+
     function submit() {
-      let nameEntered = document.getElementById("name").value;
-      let cardEntered = document.getElementById("cardnumber").value;
-      let expiryEntered = document.getElementById("cardexpiry").value;
-      let cvvEntered = document.getElementById("cardcvv").value;
-      let addressEntered = document.getElementById("billingAddress").value;
-      let emailEntered = document.getElementById("email").value;  
+      nameEntered = document.getElementById("name").value;
+      cardEntered = document.getElementById("cardnumber").value;
+      expiryEntered = document.getElementById("cardexpiry").value;
+      cvvEntered = document.getElementById("cardcvv").value;
+      addressEntered = document.getElementById("billingAddress").value;
+      emailEntered = document.getElementById("email").value;
       check();
     }
 
@@ -142,13 +149,12 @@
     }
 
     function autofill() {
-      let nameEntered = "someone";
-      let cardEntered = 123456789;
-      let expiryEntered = 12/34;
-      let cvvEntered = 123456789;
-      let addressEntered = "somewhere";
-      let emailEntered = "example@example.com";  
-      check();
+      document.getElementById("name").value = "someone";
+      document.getElementById("cardnumber").value = "123456789";
+      document.getElementById("cardexpiry").value = "12/34";
+      document.getElementById("cardcvv").value = "123";
+      document.getElementById("billingAddress").value = "somewhere";
+      document.getElementById("email").value = "example@example.com";
     }
   </script>
 
